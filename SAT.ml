@@ -1,3 +1,10 @@
+(* SATCaml
+ * SAT (Propositional Satisfiability Problem) Solver written in OCaml
+ * 
+ * May 5-6, 2017, Velocity Hackathon
+ * Yuhui Li
+ *)
+
 type assignment = NotAssigned | AssignedTrue | AssignedFalse
 
 let term x =
