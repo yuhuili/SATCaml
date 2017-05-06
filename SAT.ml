@@ -77,6 +77,14 @@ let rec assign vars clauses assignments =
               if false_res then assign tl false_assign ((t,false)::assignments)
               else (false, assignments)
 
-let rec sat () =
+let sat_help () =
   let (vars, clauses) = add [] [] in
     assign vars clauses []
+
+let sat () =
+  let () = print_endline "==========\nSATCaml v0.0.1\n==========" in
+    let (res, combination) = sat_help () in
+      if res = false then print_endline "Not satisfiable"
+      else let () = print_endline "Satisfiable by" in
+        List.fold_left (fun acc (x,y) -> let () = print_string "Assign " in let () = print_string x in
+          if y = true then print_endline " as True" else print_endline " as False") () combination
