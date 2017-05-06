@@ -1,0 +1,2 @@
+#load "str.cma";;
+#use "SAT.ml";;
